@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pratham Patel | Biodata</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --ink: #2a2a2a;
+        --muted: #6d6d6d;
+        --accent: #b38a2c;
+        --paper: #f7f3ea;
+        --card: #ffffff;
+        --rule: #e3d9c6;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Source Sans 3", sans-serif;
+        color: var(--ink);
+        background: radial-gradient(
+          circle at top,
+          #fbf8f1,
+          #f1e9da 60%,
+          #eee3cf
+        );
+      }
+
+      .page {
+        max-width: 980px;
+        margin: 40px auto;
+        background: var(--card);
+        border-radius: 14px;
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+        overflow: hidden;
+      }
+
+      .header {
+        padding: 32px 36px 24px;
+        border-bottom: 1px solid var(--rule);
+        background: linear-gradient(135deg, #fff9ee, #fff);
+      }
+
+      .header small {
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .title {
+        margin: 8px 0 0;
+        font-family: "Playfair Display", serif;
+        font-size: 40px;
+        font-weight: 700;
+      }
+
+      .subtitle {
+        margin: 6px 0 0;
+        color: var(--muted);
+        font-size: 16px;
+      }
+
+      .content {
+        display: grid;
+        grid-template-columns: 1.15fr 1fr;
+        gap: 24px;
+        padding: 32px 36px 40px;
+      }
+
+      .profile-card {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .photo {
+        width: 100%;
+        aspect-ratio: 3 / 4;
+        background: linear-gradient(160deg, #f1e6cf, #e6d2ad);
+        border-radius: 12px;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .photo-label {
+        position: absolute;
+        inset: auto 14px 14px auto;
+        background: rgba(255, 255, 255, 0.85);
+        padding: 6px 10px;
+        border-radius: 999px;
+        font-size: 12px;
+        color: var(--muted);
+      }
+
+      .photo-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .photo-grid img {
+        width: 100%;
+        border-radius: 10px;
+        object-fit: contain;
+        background: #f6efe1;
+        aspect-ratio: 4 / 5;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+      }
+
+      .section {
+        margin-bottom: 18px;
+      }
+
+      .section h3 {
+        margin: 0 0 8px;
+        font-size: 15px;
+        color: var(--accent);
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+      }
+
+      .detail-list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: grid;
+        gap: 6px;
+        color: var(--ink);
+      }
+
+      .detail-list li {
+        font-size: 15px;
+      }
+
+      .detail-list span {
+        color: var(--muted);
+      }
+
+      .about {
+        background: var(--paper);
+        border-radius: 12px;
+        padding: 22px 24px;
+        margin-top: 12px;
+        font-size: 15px;
+        line-height: 1.7;
+        color: var(--ink);
+      }
+
+      .traits {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px 16px;
+      }
+
+      .tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 12px;
+        border-radius: 999px;
+        background: #fff7e6;
+        border: 1px solid #f0d8a4;
+        font-size: 14px;
+        color: #6a4d12;
+      }
+
+      .footer {
+        padding: 18px 36px 28px;
+        border-top: 1px solid var(--rule);
+        color: var(--muted);
+        font-size: 12px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      @media (max-width: 900px) {
+        .content {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .page {
+          margin: 16px;
+        }
+
+        .header,
+        .content,
+        .footer {
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+
+        .title {
+          font-size: 32px;
+        }
+
+        .traits {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <header class="header">
+        <small>Biodata</small>
+        <h1 class="title">Pratham Patel</h1>
+        <p class="subtitle">
+          Bachelor of Science in Business Administration | Student
+        </p>
+      </header>
+
+      <section class="content">
+        <div class="profile-card">
+          <div class="section">
+            <h3>Personal Details</h3>
+            <ul class="detail-list">
+              <li><span>Date of Birth:</span> 20 August 2004</li>
+              <li><span>Education:</span> B.Sc in Business Administration</li>
+              <li><span>Occupation:</span> Student</li>
+            </ul>
+          </div>
+
+          <div class="section">
+            <h3>Family</h3>
+            <ul class="detail-list">
+              <li><span>Father:</span> Bhagirath Patel (Business)</li>
+              <li><span>Mother:</span> Kamina Patel (Housewife)</li>
+              <li><span>Sister:</span> Kavisha Patel</li>
+            </ul>
+          </div>
+
+          <div class="section">
+            <h3>Hobbies</h3>
+            <div class="traits">
+              <div class="tag">Garba</div>
+              <div class="tag">Cuisine Scouting</div>
+              <div class="tag">Nightlife</div>
+              <div class="tag">Adrenaline / Travel</div>
+              <div class="tag">Social Creativity</div>
+              <div class="tag">Cultural Fests</div>
+            </div>
+          </div>
+
+          <div class="about">
+            Pratham is pursuing his B.Sc in Business Administration. He enjoys
+            vibrant cultural experiences, social creativity, and travel that
+            brings new energy and perspectives.
+          </div>
+        </div>
+
+        <div class="photo">
+          <img src="img/pic1.png" alt="Portrait of Pratham Patel" />
+          <div class="photo-label">Pratham Patel</div>
+        </div>
+        <div class="photo-grid">
+          <img src="img/pic2.png" alt="Pratham Patel portrait 2" />
+          <img src="img/pic3.png" alt="Pratham Patel portrait 3" />
+          <img src="img/pic4.png" alt="Pratham Patel portrait 4" />
+        </div>
+      </section>
+
+      <footer class="footer">
+        <span>Pratham Patel Biodata</span>
+      </footer>
+    </main>
+  </body>
+</html>
