@@ -42,7 +42,7 @@
         background: var(--card);
         border-radius: 14px;
         box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
-        overflow: hidden;
+        overflow: visible;
       }
 
       .header {
@@ -76,6 +76,7 @@
         grid-template-columns: 1.15fr 1fr;
         gap: 24px;
         padding: 32px 36px 40px;
+        overflow: visible;
       }
 
       .profile-card {
@@ -114,6 +115,7 @@
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 10px;
+        overflow: visible;
       }
 
       .photo-grid img {
@@ -123,6 +125,15 @@
         background: #f6efe1;
         aspect-ratio: 4 / 5;
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+        transform-origin: center center;
+      }
+
+      .photo-grid img:hover {
+        transform: scale(2.1);
+        box-shadow: 0 18px 36px rgba(0, 0, 0, 0.22);
+        z-index: 4;
+        position: relative;
       }
 
       .section {
@@ -226,9 +237,7 @@
       <header class="header">
         <small>Biodata</small>
         <h1 class="title">Pratham Patel</h1>
-        <p class="subtitle">
-          Bachelor of Science in Business Administration | Student
-        </p>
+        <p class="subtitle">Student and Future Entrepreneur</p>
       </header>
 
       <section class="content">
@@ -238,7 +247,7 @@
             <ul class="detail-list">
               <li><span>Date of Birth:</span> 20 August 2004</li>
               <li><span>Education:</span> B.Sc in Business Administration</li>
-              <li><span>Occupation:</span> Student</li>
+              <li><span>Current Status:</span> Student</li>
             </ul>
           </div>
 
@@ -264,9 +273,9 @@
           </div>
 
           <div class="about">
-            Pratham is pursuing his B.Sc in Business Administration. He enjoys
-            vibrant cultural experiences, social creativity, and travel that
-            brings new energy and perspectives.
+            Pratham values family, cultural traditions, and meaningful
+            connections. He enjoys vibrant cultural experiences, social
+            creativity, and travel that brings new energy and perspectives.
           </div>
         </div>
 
