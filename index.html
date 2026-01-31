@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -125,15 +125,43 @@
         background: #f6efe1;
         aspect-ratio: 4 / 5;
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-        transition: transform 0.25s ease, box-shadow 0.25s ease;
+        transition:
+          transform 0.25s ease,
+          box-shadow 0.25s ease;
         transform-origin: center center;
       }
 
       .photo-grid img:hover {
-        transform: scale(2.1);
-        box-shadow: 0 18px 36px rgba(0, 0, 0, 0.22);
-        z-index: 4;
-        position: relative;
+        transform: scale(1.06);
+        box-shadow: 0 16px 28px rgba(0, 0, 0, 0.2);
+      }
+
+      .zoom-overlay {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(28, 22, 12, 0.55);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.2s ease;
+        pointer-events: none;
+        z-index: 40;
+      }
+
+      .zoom-overlay img {
+        width: min(82vw, 560px);
+        max-height: 82vh;
+        object-fit: contain;
+        border-radius: 14px;
+        background: #f6efe1;
+        box-shadow: 0 26px 60px rgba(0, 0, 0, 0.4);
+      }
+
+      .zoom-overlay.show {
+        opacity: 1;
+        visibility: visible;
       }
 
       .section {
@@ -275,11 +303,9 @@
           <div class="section">
             <h3>Hobbies</h3>
             <div class="traits">
-              <div class="tag">Garba</div>
-              <div class="tag">Cuisine Scouting</div>
-              <div class="tag">Nightlife</div>
-              <div class="tag">Adrenaline / Travel</div>
               <div class="tag">Social Creativity</div>
+              <div class="tag">Cuisine Scouting</div>
+              <div class="tag">Adrenaline / Travel</div>
               <div class="tag">Cultural Fests</div>
             </div>
           </div>
@@ -296,9 +322,9 @@
           <div class="photo-label">Pratham Patel</div>
         </div>
         <div class="photo-grid">
-          <img src="img/pic2.png" alt="Pratham Patel portrait 2" />
-          <img src="img/pic3.png" alt="Pratham Patel portrait 3" />
-          <img src="img/pic4.png" alt="Pratham Patel portrait 4" />
+          <img src="img/pic2.png" alt="Pratham Patel portrait 2" tabindex="0" />
+          <img src="img/pic3.png" alt="Pratham Patel portrait 3" tabindex="0" />
+          <img src="img/pic4.png" alt="Pratham Patel portrait 4" tabindex="0" />
         </div>
       </section>
 
@@ -306,5 +332,32 @@
         <span>Pratham Patel Biodata</span>
       </footer>
     </main>
+    <div class="zoom-overlay" id="zoomOverlay" aria-hidden="true">
+      <img src="" alt="Enlarged portrait" />
+    </div>
+    <script>
+      const zoomOverlay = document.getElementById("zoomOverlay");
+      const zoomImage = zoomOverlay.querySelector("img");
+
+      document.querySelectorAll(".photo-grid img").forEach((img) => {
+        img.addEventListener("mouseenter", () => {
+          zoomImage.src = img.src;
+          zoomOverlay.classList.add("show");
+        });
+
+        img.addEventListener("mouseleave", () => {
+          zoomOverlay.classList.remove("show");
+        });
+
+        img.addEventListener("focus", () => {
+          zoomImage.src = img.src;
+          zoomOverlay.classList.add("show");
+        });
+
+        img.addEventListener("blur", () => {
+          zoomOverlay.classList.remove("show");
+        });
+      });
+    </script>
   </body>
 </html>
